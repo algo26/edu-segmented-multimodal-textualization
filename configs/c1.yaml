@@ -1,0 +1,54 @@
+# C1: uniform sampling, fixed windows, captions and transcript.
+device: auto
+
+video:
+  fps: 0.5
+  max_frames: null
+  frame_size: [224, 224]
+  keyframe_method: uniform
+  sampling_strategy: uniform
+  transcript_segment_medium_seconds: 8.0
+  transcript_segment_long_seconds: 16.0
+  silence_gap_seconds: 8.0
+
+audio:
+  sample_rate: 16000
+  extract_audio: true
+
+captioning:
+  model_name: Salesforce/blip-image-captioning-base
+  batch_size: 1
+  max_length: 50
+  num_beams: 1
+  min_length: 0
+  device: auto
+
+asr:
+  model_name: base
+  device: cpu
+  compute_type: int8
+  language: null
+  beam_size: 5
+
+fusion:
+  timeline_window_seconds: 30.0
+  windowing_strategy: fixed
+
+reasoning:
+  provider: openai
+  model_name: gpt-4o-mini-2024-07-18
+  context_source: multimodal
+  api_key: null
+  temperature: 0.0
+  max_tokens: 512
+
+cache:
+  enabled: false
+  cache_dir: ./artifacts
+  cache_frames: false
+  cache_audio: false
+  cache_captions: false
+  cache_transcripts: false
+  cache_fusion: false
+
+verbose: true

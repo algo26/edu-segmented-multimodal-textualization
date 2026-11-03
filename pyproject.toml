@@ -1,0 +1,61 @@
+[project]
+name = "segmented-multimodal-textualization"
+version = "0.1.0"
+description = "Paper-aligned segmented multimodal textualization for long video"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "Alvaro Gomez" }]
+keywords = ["video understanding", "multimodal", "textualization", "speech anchored sampling"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "datasets>=2.14.0",
+    "faster-whisper>=0.10.0",
+    "ffmpeg-python>=0.2.0",
+    "numpy>=1.24.0",
+    "openai>=1.0.0",
+    "opencv-python>=4.8.0",
+    "pillow>=9.0.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "torch>=2.0.0",
+    "tqdm>=4.65.0",
+    "transformers>=4.30.0",
+]
+
+[project.scripts]
+segmented-textualization = "run:main"
+
+[project.optional-dependencies]
+notebook = [
+    "jupyter>=1.0.0",
+    "ipywidgets>=8.0.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["videoqa"]
+py-modules = ["run"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
