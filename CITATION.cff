@@ -1,11 +1,46 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated paper."
-title: "Segmented Multimodal Textualization"
+message: "If you use this software, please cite the article listed under preferred-citation."
+title: "Segmented Multimodal Textualization for Educational Video Understanding"
+abstract: >-
+  Training-free pipeline that converts long videos into time-ordered text segments
+  by combining BLIP-base frame captions with Whisper-base transcripts, including
+  the speech-anchored frame sampling rule and the fusion stage, so that a
+  general-purpose language model can answer questions about the video and
+  summarize it.
 type: software
 authors:
-  - family-names: Gomez
-    given-names: Alvaro
-version: 0.1.0
-date-released: 2026-11-03
+  - given-names: Alvaro
+    family-names: Gomez-Peñuela
+    email: alvaro.gomezp@udea.edu.co
+    affiliation: "Department of Electronic Engineering, Universidad de Antioquia"
+    orcid: "https://orcid.org/0009-0001-5599-6090"
+  - given-names: Luis
+    family-names: Fletscher
+    affiliation: "Department of Electronic Engineering, Universidad de Antioquia"
+  - given-names: Carlos
+    family-names: Mendoza-Cardenas
+    affiliation: "Twitch Interactive Inc."
+repository-code: "https://github.com/algo26/edu-segmented-multimodal-textualization"
 license: MIT
-repository-code: "https://github.com/algo26/segmented-multimodal-textualization"
+version: "1.0.0"
+date-released: "2026-11-03"
+keywords:
+  - educational lecture video
+  - video understanding
+  - multimodal textualization
+  - speech-anchored sampling
+  - MLVU
+preferred-citation:
+  type: article
+  title: "Segmented Multimodal Textualization for Educational Video Understanding on Resource-Constrained Devices"
+  authors:
+    - given-names: Alvaro
+      family-names: Gomez-Peñuela
+      orcid: "https://orcid.org/0009-0001-5599-6090"
+    - given-names: Luis
+      family-names: Fletscher
+    - given-names: Carlos
+      family-names: Mendoza-Cardenas
+  journal: "Applied System Innovation"
+  status: submitted
+  year: 2026
