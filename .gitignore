@@ -59,6 +59,8 @@ logs/
 # Outputs
 predictions.jsonl
 *.jsonl
+!reproducibility/data/
+!reproducibility/data/**
 outputs/
 runs/
 benchmark_runs/
